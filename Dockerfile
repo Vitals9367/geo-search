@@ -17,6 +17,8 @@ RUN mkdir -p /srv/app/static
 RUN SECRET_KEY="only-used-for-collectstatic" python manage.py collectstatic --noinput
 RUN python manage.py compilemessages
 
+RUN apt-get install git
+
 # Openshift starts the container process with group zero and random ID
 # we mimic that here with nobody and group zero
 USER nobody:0
