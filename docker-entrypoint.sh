@@ -1,6 +1,5 @@
 #!/bin/bash
 
-chmod -R 777 ./.git
 git config --global --add safe.directory /app
 
 set -e
