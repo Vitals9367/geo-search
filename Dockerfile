@@ -9,6 +9,8 @@ RUN apt-get -o Acquire::Check-Valid-Until=false -o Acquire::Check-Date=false upd
 
 COPY requirements.txt .
 
+RUN apt-get install git
+
 COPY . .
 
 ENV STATIC_ROOT /srv/app/static
@@ -16,8 +18,6 @@ RUN mkdir -p /srv/app/static
 
 RUN SECRET_KEY="only-used-for-collectstatic" python manage.py collectstatic --noinput
 RUN python manage.py compilemessages
-
-RUN apt-get install git
 
 # Openshift starts the container process with group zero and random ID
 # we mimic that here with nobody and group zero
