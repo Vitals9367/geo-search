@@ -9,6 +9,8 @@ RUN apt-get -o Acquire::Check-Valid-Until=false -o Acquire::Check-Date=false upd
     ln -s /usr/bin/pip3 /usr/local/bin/pip && \
     ln -s /usr/bin/python3 /usr/local/bin/python
 
+RUN apk add git && git config --global --add safe.directory /app
+
 COPY requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
