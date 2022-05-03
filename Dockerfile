@@ -9,8 +9,6 @@ RUN apt-get -o Acquire::Check-Valid-Until=false -o Acquire::Check-Date=false upd
 
 COPY requirements.txt .
 
-RUN apt-get install git
-
 COPY . .
 
 ENV STATIC_ROOT /srv/app/static
