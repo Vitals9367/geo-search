@@ -13,6 +13,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
+ENV GIT_CEILING_DIRECTORIES /app
 ENV STATIC_ROOT /srv/app/static
 RUN mkdir -p /srv/app/static
 
