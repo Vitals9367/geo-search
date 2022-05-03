@@ -1,7 +1,5 @@
 #!/bin/bash
 
-git config --global --add safe.directory /app
-
 set -e
 
 # Wait for the database to be available
