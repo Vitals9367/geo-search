@@ -15,7 +15,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN git config --global --add safe.directory /app
+RUN git config --global --add safe.directory '*'
 
 ENV STATIC_ROOT /srv/app/static
 RUN mkdir -p /srv/app/static
