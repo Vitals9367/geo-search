@@ -2,6 +2,8 @@
 
 git config --global --add safe.directory '*'
 
+su nobody
+
 set -e
 
 # Wait for the database to be available
