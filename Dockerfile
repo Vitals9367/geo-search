@@ -13,7 +13,6 @@ COPY requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-RUN git init && git config --global --add safe.directory /app
 COPY . .
 
 ENV STATIC_ROOT /srv/app/static
@@ -26,7 +25,5 @@ RUN python manage.py compilemessages
 # we mimic that here with nobody and group zero
 # RUN chown nobody:0 /app && chmod -R 755 /app
 USER nobody:0
-
-ENV GIT_CEILING_DIRECTORIES /app
 
 ENTRYPOINT ["./docker-entrypoint.sh"]
