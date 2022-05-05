@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 
 COPY .gitconfig .
-COPY .gitconfig /root/.gitconfig
+# COPY .gitconfig /root/.gitconfig
 
 WORKDIR /app
 
