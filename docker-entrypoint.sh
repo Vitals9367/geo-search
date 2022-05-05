@@ -1,12 +1,5 @@
 #!/bin/bash
 
-chown 0:0 -R /app/.git
-chmod 777 -R /app/.git
-
-git config --global --add safe.directory '*'
-
-su nobody
-
 set -e
 
 # Wait for the database to be available
