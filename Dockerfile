@@ -7,7 +7,7 @@ RUN apt-get -o Acquire::Check-Valid-Until=false -o Acquire::Check-Date=false upd
     ln -s /usr/bin/pip3 /usr/local/bin/pip && \
     ln -s /usr/bin/python3 /usr/local/bin/python
 
-RUN add-apt-repository ppa:git-core/ppa && apt update && apt install git
+RUN add-apt-repository ppa:git-core/ppa && apt update && apt install -y git
 
 COPY requirements.txt .
 
