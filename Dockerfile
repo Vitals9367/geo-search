@@ -6,11 +6,11 @@ COPY .gitconfig .
 WORKDIR /app
 
 RUN apt-get -o Acquire::Check-Valid-Until=false -o Acquire::Check-Date=false update && \
-     TZ="Europe/Helsinki" DEBIAN_FRONTEND=noninteractive apt-get install -y apt-transport-https software-properties-common python3-pip gdal-bin uwsgi uwsgi-plugin-python3 libgdal26 postgresql-client netcat gettext libpq-dev unzip && \
+     TZ="Europe/Helsinki" DEBIAN_FRONTEND=noninteractive apt-get install -y apt-transport-https software-properties-common python3-pip git-core gdal-bin uwsgi uwsgi-plugin-python3 libgdal26 postgresql-client netcat gettext libpq-dev unzip && \
     ln -s /usr/bin/pip3 /usr/local/bin/pip && \
     ln -s /usr/bin/python3 /usr/local/bin/python
 
-RUN add-apt-repository ppa:git-core/ppa && apt update && apt install -y git
+# RUN add-apt-repository ppa:git-core/ppa && apt update && apt install -y git
 
 COPY requirements.txt .
 
