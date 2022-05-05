@@ -26,7 +26,7 @@ RUN python manage.py compilemessages
 # Openshift starts the container process with group zero and random ID
 # we mimic that here with nobody and group zero
 # RUN chown nobody:0 /app && chmod -R 755 /app
-USER nobody:0
+USER root
 
 
 ENTRYPOINT ["./docker-entrypoint.sh"]
